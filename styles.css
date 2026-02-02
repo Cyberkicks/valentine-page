@@ -80,3 +80,17 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 .corner-spongebob{position:fixed;right:20px;top:20px;width:280px;max-width:56vw;transform:rotate(-25deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
 .corner-frog{position:fixed;left:20px;top:20px;width:280px;max-width:56vw;transform:rotate(25deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
 
+/* mobile-friendly corner images */
+@media (max-width:768px){
+  .corner-monkey{width:160px;max-width:32vw}
+  .corner-spongebob{width:160px;max-width:32vw}
+  .corner-frog{width:160px;max-width:32vw}
+}
+
+@media (max-width:480px){
+  .corner-monkey{width:100px;max-width:20vw;right:8px;bottom:8px}
+  .corner-spongebob{width:100px;max-width:20vw;right:8px;top:8px}
+  .corner-frog{width:100px;max-width:20vw;left:8px;top:8px}
+  .corner-cat{width:100px;max-width:20vw;left:8px;bottom:8px}
+}
+
