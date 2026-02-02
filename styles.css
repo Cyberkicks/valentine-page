@@ -37,7 +37,7 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 .yes{background:linear-gradient(90deg,var(--accent),#ff6b99);color:white}
 .no{background:#fff;color:#333;border:1px solid rgba(0,0,0,0.06)}
 .hidden{display:none}
-.result{margin-top:18px;font-weight:600;color:var(--accent)}
+.result{margin-top:36px;font-weight:600;color:var(--accent)}
 .celebrate{animation:pop 700ms ease forwards}
 @keyframes pop{0%{transform:scale(.9);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
 
@@ -68,7 +68,7 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 
 /* corner monkey and cat */
 .corner-monkey{position:fixed;right:18px;bottom:18px;width:140px;max-width:28vw;transform:rotate(-20deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
-.corner-cat{position:fixed;right:20px;bottom:22px;width:160px;max-width:34vw;transform:rotate(-20deg) translateY(24px);opacity:0;z-index:1001;pointer-events:none;transition:transform 600ms cubic-bezier(.2,.9,.2,1),opacity 600ms}
-.corner-cat.show{transform:rotate(-20deg) translateY(0);opacity:1}
-.corner-cat.hidden{display:none}
+.corner-cat{position:fixed;left:20px;bottom:22px;width:160px;max-width:34vw;transform:rotate(20deg) translateY(24px);opacity:0;z-index:1001;pointer-events:none;visibility:hidden;transition:transform 600ms cubic-bezier(.2,.9,.2,1),opacity 600ms}
+.corner-cat.show{transform:rotate(20deg) translateY(0);opacity:1;visibility:visible}
+.corner-cat.hidden{opacity:0;visibility:hidden}
 
