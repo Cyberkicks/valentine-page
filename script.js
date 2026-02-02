@@ -124,18 +124,15 @@
     // create a short burst of hearts for extra celebration
     const burstInterval = setInterval(()=> createHeart({burst:true}), 120);
     setTimeout(()=> clearInterval(burstInterval), 2600);
-    // reveal cat GIF in the corner
+    // reveal cat GIF in the corner - FORCE it to show no matter what
     const catEl = document.getElementById('catgif');
     if (catEl) {
       catEl.classList.remove('hidden');
-      // force visibility immediately to ensure it shows
+      catEl.classList.add('show');
+      catEl.style.display = 'block';
       catEl.style.visibility = 'visible';
-      catEl.style.opacity = '0';
-      // allow layout, then animate in
-      requestAnimationFrame(()=> requestAnimationFrame(()=> {
-        catEl.classList.add('show');
-        catEl.style.visibility = 'visible';
-      }));
+      catEl.style.opacity = '1';
+      catEl.style.pointerEvents = 'auto';
     }
     // reload the page after 10 seconds to reset
     setTimeout(() => {
