@@ -41,9 +41,9 @@
     'Periodt! 💅',
     'Bussin bussin',
     'You owe me money after this',
-    'Just making sure you weren't gay',
-    'Let's 67 later',
-    'Touch grass queen',
+    'Just making sure you weren\'t gay',
+    'Let\'s 67 later',
+    'Touch grass queen'
   ];
   
   let phraseIndex = 0;
