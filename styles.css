@@ -47,6 +47,9 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 .floating-heart.med{font-size:26px}
 .floating-heart.large{font-size:40px}
 
+/* confetti */
+.confetti{position:fixed;border-radius:2px;pointer-events:none;z-index:5}
+
 @media (max-width:420px){#catval{max-width:220px;width:72%}}
 h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 .buttons{display:flex;gap:28px;justify-content:center;align-items:center}

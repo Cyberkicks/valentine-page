@@ -117,7 +117,32 @@
     env.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') onOpen(); });
   });
 
-  function growYes() {
+  function createConfetti() {
+    const colors = ['#ff3b6f', '#ff6b99', '#ff2d55', '#ff7aa2', '#ffbfd6', '#ffeef6'];
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      const size = Math.random() * 8 + 4;
+      confetti.style.width = size + 'px';
+      confetti.style.height = size + 'px';
+      confetti.style.opacity = Math.random() * 0.7 + 0.5;
+      document.body.appendChild(confetti);
+      
+      // Animate
+      const duration = Math.random() * 1.5 + 1.5;
+      const xDrift = (Math.random() - 0.5) * 200;
+      const yDrift = Math.random() * 300 + 200;
+      confetti.animate([
+        { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+        { transform: `translate(${xDrift}px, ${yDrift}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+      ], { duration: duration * 1000, easing: 'ease-out' });
+      
+      // Remove after animation
+      setTimeout(() => confetti.remove(), duration * 1000 + 100);
+    }
+  }
     const scale = 1 + Math.min(5, noCount) * 0.18; // limit growth
     yes.style.transform = `scale(${scale})`;
     // also increase padding for clearer size change
@@ -153,6 +178,8 @@
     // create a short burst of hearts for extra celebration
     const burstInterval = setInterval(()=> createHeart({burst:true}), 120);
     setTimeout(()=> clearInterval(burstInterval), 2600);
+    // create confetti explosion
+    createConfetti();
     // reveal cat GIF in the corner - FORCE it to show no matter what
     const catEl = document.getElementById('catgif');
     if (catEl) {
