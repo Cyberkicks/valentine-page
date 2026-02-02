@@ -32,7 +32,28 @@
     });
   }
 
-  // Preload corner cat GIF so it appears on first click
+  // Cycling encouragement phrases
+  const phrases = [
+    'You are amazing! 💪',
+    'Be confident! 🌟',
+    'You\'ve got this! 🔥',
+    'Spread love! 💖',
+    'Believe in yourself! ✨',
+    'You rock! 🎸',
+    'Stay positive! 🌈',
+    'Keep shining! ⭐',
+    'You\'re awesome! 🚀'
+  ];
+  
+  let phraseIndex = 0;
+  const encouragementText = document.getElementById('encouragementText');
+  
+  if (encouragementText) {
+    setInterval(() => {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      encouragementText.textContent = phrases[phraseIndex];
+    }, 4000);
+  }
   const catPreloadEl = document.getElementById('catgif');
   if (catPreloadEl) {
     const _pre = new Image();
