@@ -104,7 +104,7 @@
     e.preventDefault();
     // show a celebration message
     result.classList.remove('hidden');
-    result.textContent = 'Yay! 💖 Thank you — happy Valentine\'s Day!';
+    result.textContent = 'Yay! 💖  Sucks to suck loser... Happy Valentine\'s Day!';
     result.classList.add('celebrate');
     // subtle heart pop
     const h = document.querySelector('.heart');
