@@ -1,0 +1,74 @@
+:root{
+  --bg1:#fffbfb;
+  --pink1:#ff7aa2;
+  --pink2:#ffbfd6;
+  --accent:#ff3b6f;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Open Sans', Inter, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{background:linear-gradient(180deg,var(--pink2),#ffeef6 40%,var(--bg1));display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:rgba(255,255,255,0.85);border-radius:16px;padding:28px 36px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.08);max-width:480px;width:100%}
+.heart{font-size:48px;color:var(--accent);transform:translateY(-6px)}
+h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
+
+/* larger cat image */
+#catval{display:block;margin:0 auto 14px;border-radius:14px;max-width:320px;width:60%;box-shadow:0 10px 28px rgba(0,0,0,0.16);transition:transform .25s ease}
+
+/* floating hearts: colored, bouncing/oscillating while floating up */
+.floating-heart{position:fixed;bottom:-40px;pointer-events:none;font-size:20px;z-index:9999;opacity:0;transform:translateX(-50%) scale(1);text-shadow:0 6px 18px rgba(255,100,140,0.18)}
+@keyframes floatUp{
+  0%{transform:translateX(calc(-50% + var(--dx, 0vw))) translateY(0) scale(0.9);opacity:0}
+  10%{opacity:1}
+  25%{transform:translateX(calc(-50% + var(--dx, 0vw))) translateY(-18vh) rotate(-18deg) scale(1.06)}
+  45%{transform:translateX(calc(-50% + calc(var(--dx, 0vw) * -0.6))) translateY(-40vh) rotate(12deg) scale(1.02)}
+  70%{transform:translateX(calc(-50% + calc(var(--dx, 0vw) * 0.5))) translateY(-75vh) rotate(-6deg) scale(1.18)}
+  100%{transform:translateX(calc(-50% + 0vw)) translateY(-110vh) rotate(0deg) scale(1.4);opacity:0}
+}
+
+.floating-heart.small{font-size:18px}
+.floating-heart.med{font-size:26px}
+.floating-heart.large{font-size:40px}
+
+@media (max-width:420px){#catval{max-width:220px;width:72%}}
+h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
+.buttons{display:flex;gap:16px;justify-content:center;align-items:center}
+.btn{cursor:pointer;border:0;border-radius:12px;padding:12px 20px;font-size:16px;transition:transform 180ms ease,background 200ms ease,box-shadow 150ms;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.btn:active{transform:translateY(2px)}
+.yes{background:linear-gradient(90deg,var(--accent),#ff6b99);color:white}
+.no{background:#fff;color:#333;border:1px solid rgba(0,0,0,0.06)}
+.hidden{display:none}
+.result{margin-top:18px;font-weight:600;color:var(--accent)}
+.celebrate{animation:pop 700ms ease forwards}
+@keyframes pop{0%{transform:scale(.9);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
+
+@media (max-width:420px){.card{padding:20px}.buttons{flex-direction:column} .btn{width:100%}}
+
+/* Envelope / letter opening styles */
+.envelope{position:relative;display:inline-block;perspective:1200px}
+.envelope{position:relative;display:inline-block;perspective:1200px;width:100%;max-width:520px}
+.envelope__body{background:transparent;border-radius:16px;overflow:visible;display:block}
+.envelope__flap{position:absolute;left:0;right:0;top:-6px;height:120px;background:linear-gradient(180deg,#ffdfe8,#ffbfcf);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,0.16);transform-origin:top center;transform:rotateX(0deg);transition:transform 1600ms cubic-bezier(.2,.8,.2,1), opacity 700ms;z-index:8}
+.envelope__cover{position:absolute;inset:0;background:linear-gradient(180deg,#ffdfe8 0%, #ffccd9 60%);border-radius:16px;z-index:6;box-shadow:0 10px 30px rgba(0,0,0,0.12);transition:opacity 1200ms ease,transform 1200ms ease}
+.envelope:not(.open) .envelope__body .card{opacity:0;transform:translateY(18px);transition:opacity 450ms ease,transform 450ms ease}
+.envelope.open .envelope__flap{transform:rotateX(-180deg);}
+.envelope.open .envelope__cover{opacity:0;transform:translateY(18px);pointer-events:none}
+.envelope.open .envelope__body .card{opacity:1;transform:none}
+
+/* position the heart on the outside of the envelope */
+.envelope > .heart{position:absolute;left:50%;top:34px;transform:translateX(-50%);font-size:48px;color:var(--accent);z-index:9;pointer-events:none;text-shadow:0 6px 18px rgba(255,100,140,0.18);transition:transform 500ms ease,opacity 300ms}
+.envelope.open > .heart{transform:translateX(-50%) translateY(-10px) scale(1.02)}
+
+/* ensure envelope roughly matches the card width */
+.envelope__body {position:relative}
+
+/* heart flies away when envelope opens */
+.envelope > .heart{position:absolute;left:50%;top:34px;transform:translateX(-50%);font-size:48px;color:var(--accent);z-index:9;pointer-events:none;text-shadow:0 6px 18px rgba(255,100,140,0.18);transition:transform 500ms ease,opacity 300ms}
+.envelope > .heart.fly{animation:flyAway 1600ms cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes flyAway{0%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}30%{transform:translateX(calc(-50% + var(--dx, -10vw))) translateY(-18vh) scale(1.05)}100%{transform:translateX(calc(-50% + var(--dx, -10vw))) translateY(-120vh) scale(1.4);opacity:0}}
+
+/* corner monkey and cat */
+.corner-monkey{position:fixed;right:18px;bottom:18px;width:140px;max-width:28vw;transform:rotate(-20deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
+.corner-cat{position:fixed;right:20px;bottom:22px;width:160px;max-width:34vw;transform:rotate(-20deg) translateY(24px);opacity:0;z-index:1001;pointer-events:none;transition:transform 600ms cubic-bezier(.2,.9,.2,1),opacity 600ms}
+.corner-cat.show{transform:rotate(-20deg) translateY(0);opacity:1}
+.corner-cat.hidden{display:none}
+
