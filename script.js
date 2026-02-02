@@ -128,8 +128,14 @@
     const catEl = document.getElementById('catgif');
     if (catEl) {
       catEl.classList.remove('hidden');
+      // force visibility immediately to ensure it shows
+      catEl.style.visibility = 'visible';
+      catEl.style.opacity = '0';
       // allow layout, then animate in
-      requestAnimationFrame(()=> requestAnimationFrame(()=> catEl.classList.add('show')));
+      requestAnimationFrame(()=> requestAnimationFrame(()=> {
+        catEl.classList.add('show');
+        catEl.style.visibility = 'visible';
+      }));
     }
     // reload the page after 10 seconds to reset
     setTimeout(() => {
