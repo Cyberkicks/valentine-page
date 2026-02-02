@@ -32,17 +32,22 @@
     });
   }
 
-  // Cycling encouragement phrases
+  // Cycling encouragement phrases - goofy and funny
   const phrases = [
-    'You are amazing! 💪',
-    'Be confident! 🌟',
-    'You\'ve got this! 🔥',
-    'Spread love! 💖',
-    'Believe in yourself! ✨',
-    'You rock! 🎸',
-    'Stay positive! 🌈',
-    'Keep shining! ⭐',
-    'You\'re awesome! 🚀'
+    'Slay, king! 👑',
+    'No cap fr fr 🍃',
+    'Sheesh! 🔥',
+    'You ate and left no crumbs! 🍪',
+    'Periodt! 💅',
+    'Bussin bussin! 😮',
+    'Main character energy! ✨',
+    'Zero chill, all love! 💕',
+    'That\'s the juice! 🧃',
+    'Absolutely vibing! 🎺',
+    'We´re not done yet babe! 💋',
+    'Bet bet! 🎲',
+    'Touch grass king 🌱',
+    'NPC behavior? Nope! 🎮'
   ];
   
   let phraseIndex = 0;
