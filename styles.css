@@ -31,17 +31,23 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 
 @media (max-width:420px){#catval{max-width:220px;width:72%}}
 h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
-.buttons{display:flex;gap:16px;justify-content:center;align-items:center}
+.buttons{display:flex;gap:28px;justify-content:center;align-items:center}
 .btn{cursor:pointer;border:0;border-radius:12px;padding:12px 20px;font-size:16px;transition:transform 180ms ease,background 200ms ease,box-shadow 150ms;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
 .btn:active{transform:translateY(2px)}
 .yes{background:linear-gradient(90deg,var(--accent),#ff6b99);color:white}
 .no{background:#fff;color:#333;border:1px solid rgba(0,0,0,0.06)}
 .hidden{display:none}
-.result{margin-top:36px;font-weight:600;color:var(--accent)}
+.result{margin-top:56px;font-weight:600;color:var(--accent)}
 .celebrate{animation:pop 700ms ease forwards}
 @keyframes pop{0%{transform:scale(.9);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
 
-@media (max-width:420px){.card{padding:20px}.buttons{flex-direction:column} .btn{width:100%}}
+.media-small{ }
+@media (max-width:420px){
+  .card{padding:20px}
+  .buttons{flex-direction:column;gap:12px}
+  .btn{width:100%}
+  .result{margin-top:48px}
+}
 
 /* Envelope / letter opening styles */
 .envelope{position:relative;display:inline-block;perspective:1200px}
