@@ -143,6 +143,8 @@
       setTimeout(() => confetti.remove(), duration * 1000 + 100);
     }
   }
+
+  function growYes() {
     const scale = 1 + Math.min(5, noCount) * 0.18; // limit growth
     yes.style.transform = `scale(${scale})`;
     // also increase padding for clearer size change
