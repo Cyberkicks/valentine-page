@@ -12,7 +12,7 @@ body{background:linear-gradient(180deg,var(--pink2),#ffeef6 40%,var(--bg1));disp
 .heart{font-size:48px;color:var(--accent);transform:translateY(-6px)}
 
 /* Audio player */
-.audio-player{display:flex;align-items:center;gap:12px;margin-bottom:20px;background:rgba(255,255,255,0.9);padding:12px 18px;border-radius:24px;box-shadow:0 4px 15px rgba(0,0,0,0.1);z-index:100}
+.audio-player{display:flex;align-items:center;gap:12px;margin-bottom:20px;background:rgba(255,255,255,0.9);padding:12px 18px;border-radius:24px;box-shadow:0 4px 15px rgba(0,0,0,0.1);z-index:100;pointer-events:auto}
 .play-btn{background:linear-gradient(90deg,var(--accent),#ff6b99);color:white;border:none;border-radius:50%;width:40px;height:40px;font-size:20px;cursor:pointer;transition:transform 150ms ease,box-shadow 150ms ease;box-shadow:0 4px 12px rgba(255,59,111,0.3)}
 .play-btn:hover{transform:scale(1.1)}
 .play-btn:active{transform:scale(0.95)}
@@ -71,8 +71,7 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 }
 
 /* Envelope / letter opening styles */
-.envelope{position:relative;display:inline-block;perspective:1200px}
-.envelope{position:relative;display:inline-block;perspective:1200px;width:100%;max-width:520px}
+.envelope{position:relative;display:inline-block;perspective:1200px;cursor:pointer;z-index:10}
 .envelope__body{background:transparent;border-radius:16px;overflow:visible;display:block}
 .envelope__flap{position:absolute;left:0;right:0;top:-6px;height:120px;background:linear-gradient(180deg,#ffdfe8,#ffbfcf);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,0.16);transform-origin:top center;transform:rotateX(0deg);transition:transform 1600ms cubic-bezier(.2,.8,.2,1), opacity 700ms;z-index:8}
 .envelope__cover{position:absolute;inset:0;background:linear-gradient(180deg,#ffdfe8 0%, #ffccd9 60%);border-radius:16px;z-index:6;box-shadow:0 10px 30px rgba(0,0,0,0.12);transition:opacity 1200ms ease,transform 1200ms ease}
