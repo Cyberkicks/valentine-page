@@ -73,7 +73,7 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 @keyframes flyAway{0%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}30%{transform:translateX(calc(-50% + var(--dx, -10vw))) translateY(-18vh) scale(1.05)}100%{transform:translateX(calc(-50% + var(--dx, -10vw))) translateY(-120vh) scale(1.4);opacity:0}}
 
 /* corner monkey and cat */
-.corner-monkey{position:fixed;right:18px;bottom:18px;width:140px;max-width:28vw;transform:rotate(-20deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
+.corner-monkey{position:fixed;right:18px;bottom:18px;width:280px;max-width:56vw;transform:rotate(-20deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
 .corner-cat{position:fixed;left:20px;bottom:22px;width:160px;max-width:34vw;transform:rotate(20deg) translateY(24px);opacity:0;z-index:1001;pointer-events:none;visibility:hidden;transition:transform 600ms cubic-bezier(.2,.9,.2,1),opacity 600ms;display:none}
 .corner-cat.show{transform:rotate(20deg) translateY(0);opacity:1;visibility:visible;display:block;pointer-events:auto}
 .corner-cat.hidden{display:none;opacity:0;visibility:hidden}
