@@ -79,7 +79,7 @@ h1{margin:8px 0 20px;font-size:26px;color:#3b2a2a}
 .corner-cat.hidden{display:none;opacity:0;visibility:hidden}
 .corner-spongebob{position:fixed;right:20px;top:20px;width:280px;max-width:56vw;transform:rotate(-25deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
 .corner-frog{position:fixed;left:20px;top:20px;width:280px;max-width:56vw;transform:rotate(25deg);z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
-.corner-speed{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);width:280px;max-width:56vw;z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
+.corner-speed{position:fixed;right:20px;top:340px;width:280px;max-width:56vw;z-index:1000;pointer-events:none;filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18))}
 
 /* mobile-friendly corner images */
 @media (max-width:768px){
