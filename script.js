@@ -34,20 +34,16 @@
 
   // Cycling encouragement phrases - goofy and funny
   const phrases = [
-    'Slay, king! 👑',
-    'No cap fr fr 🍃',
-    'Sheesh! 🔥',
+    '67777777 👑',
+    ' Biggie... jk jk',
+    'Lowkirkenuenly',
     'You ate and left no crumbs! 🍪',
     'Periodt! 💅',
-    'Bussin bussin! 😮',
-    'Main character energy! ✨',
-    'Zero chill, all love! 💕',
-    'That\'s the juice! 🧃',
-    'Absolutely vibing! 🎺',
-    'We´re not done yet babe! 💋',
-    'Bet bet! 🎲',
-    'Touch grass king 🌱',
-    'NPC behavior? Nope! 🎮'
+    'Bussin bussin',
+    'You owe me money after this',
+    'Just making sure you weren't gay',
+    'Let's 67 later',
+    'Touch grass queen',
   ];
   
   let phraseIndex = 0;
