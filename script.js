@@ -3,6 +3,35 @@
   const no = document.getElementById('no');
   const result = document.getElementById('result');
 
+  // Audio player controls
+  const bgAudio = document.getElementById('bgAudio');
+  const playBtn = document.getElementById('playBtn');
+  const volumeSlider = document.getElementById('volumeSlider');
+  const volLabel = document.getElementById('volLabel');
+
+  if (bgAudio && playBtn && volumeSlider) {
+    // Initialize volume
+    bgAudio.volume = volumeSlider.value / 100;
+    
+    // Play/pause button
+    playBtn.addEventListener('click', () => {
+      if (bgAudio.paused) {
+        bgAudio.play();
+        playBtn.textContent = '⏸';
+      } else {
+        bgAudio.pause();
+        playBtn.textContent = '♫';
+      }
+    });
+
+    // Volume slider
+    volumeSlider.addEventListener('input', (e) => {
+      const vol = e.target.value;
+      bgAudio.volume = vol / 100;
+      volLabel.textContent = vol + '%';
+    });
+  }
+
   // Preload corner cat GIF so it appears on first click
   const catPreloadEl = document.getElementById('catgif');
   if (catPreloadEl) {
