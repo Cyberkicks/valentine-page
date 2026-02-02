@@ -3,6 +3,13 @@
   const no = document.getElementById('no');
   const result = document.getElementById('result');
 
+  // Preload corner cat GIF so it appears on first click
+  const catPreloadEl = document.getElementById('catgif');
+  if (catPreloadEl) {
+    const _pre = new Image();
+    _pre.src = catPreloadEl.src;
+  }
+
   const noTexts = [
     'Are you sure?',
     'Are you sure again?',
